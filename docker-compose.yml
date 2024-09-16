@@ -165,7 +165,7 @@ services:
       #- S3='{"s3":{"key": "xxx", "secret": "xxx", "bucket": "xxx", "region": "xxx"}}'
       #-----------------------------------------------------------------
       # ==== MONGO_URL ====
-      - MONGO_URL=mongodb://wekandb:27017/wekan
+      - MONGO_URL=${MONGO_URL}
       #---------------------------------------------------------------
       # ==== ROOT_URL SETTING ====
       # Change ROOT_URL to your real Wekan URL, for example:
@@ -178,7 +178,7 @@ services:
       #  - http://example.com
       #  - http://boards.example.com
       #  - http://192.168.1.100    <=== using at local LAN
-      - ROOT_URL=http://localhost  #   <=== using only at same laptop/desktop where Wekan is installed
+      - ROOT_URL=${ROOT_URL}  #   <=== using only at same laptop/desktop where Wekan is installed
       #---------------------------------------------------------------
       # ==== EMAIL SETTINGS ====
       # Email settings are only at MAIL_URL and MAIL_FROM.
@@ -188,8 +188,8 @@ services:
       # NOTE: Special characters need to be url-encoded in MAIL_URL.
       #       You can encode those characters for example at: https://www.urlencoder.org
       #- MAIL_URL=smtp://user:pass@mailserver.example.com:25/
-      - MAIL_URL=smtp://<mail_url>:25/?ignoreTLS=true&tls={rejectUnauthorized:false}
-      - MAIL_FROM=Wekan Notifications <noreply.wekan@mydomain.com>
+      - MAIL_URL=${MAIL_URL}
+      - MAIL_FROM=${MAIL_FROM}
       # Currently MAIL_SERVICE is not in use.
       #- MAIL_SERVICE=Outlook365
       #- MAIL_SERVICE_USER=firstname.lastname@hotmail.com
@@ -255,7 +255,7 @@ services:
       # https://github.com/wekan/wekan/wiki/REST-API
       # https://github.com/wekan/wekan-gogs
       # If you disable Wekan API with false, Export Board does not work.
-      - WITH_API=true
+      - WITH_API=${WITH_API}
       #---------------------------------------------------------------
       # ==== PASSWORD BRUTE FORCE PROTECTION ====
       #https://atmospherejs.com/lucasantoniassi/accounts-lockout
